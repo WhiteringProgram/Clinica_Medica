@@ -16,25 +16,22 @@ public class ConsultaController implements ConsultaControllerImpl {
 	private TextField tfCodigoConsulta;
 	private TextField tfNomeConsulta;
 	private TextField tfDataConsulta;
-	private TextField tfIDPaciente;
 	private TextField tfIDExame;
 	private TextField tfIDMedico;
 	private TextArea taListaConsultas;
 
 	public ConsultaController(TextField tfCodigoConsulta, TextField tfNomeConsulta, TextField tfDataConsulta,
-			TextField tfIDPaciente, TextField tfIDExame, TextField tfIDMedico, TextArea taListaConsultas) {
+		   TextField tfIDExame, TextField tfIDMedico, TextArea taListaConsultas) {
 		this.tfCodigoConsulta = tfCodigoConsulta;
 		this.tfNomeConsulta = tfNomeConsulta;
 		this.tfDataConsulta = tfDataConsulta;
-		this.tfIDPaciente = tfIDPaciente;
 		this.tfIDExame = tfIDExame;
 		this.tfIDMedico = tfIDMedico;
 		this.taListaConsultas = taListaConsultas;
 	}
 
 	public ConsultaController(javafx.scene.control.TextField tfCodigoConsulta2,
-			javafx.scene.control.TextField tfNomeConsulta2, javafx.scene.control.TextField tfDataConsulta2,
-			javafx.scene.control.TextField tfIDPaciente2, javafx.scene.control.TextField tfIDExame2,
+			javafx.scene.control.TextField tfNomeConsulta2, javafx.scene.control.TextField tfDataConsulta2, javafx.scene.control.TextField tfIDExame2,
 			javafx.scene.control.TextField tfIDMedico2, javafx.scene.control.TextArea taListaConsultas2) {
 		// TODO Auto-generated constructor stub
 	}
@@ -73,7 +70,6 @@ public class ConsultaController implements ConsultaControllerImpl {
 		tfCodigoConsulta.setText(String.valueOf(c.getConsId()));
 		tfNomeConsulta.setText(c.getConsNome());
 		tfDataConsulta.setText(c.conversorData());
-		tfIDPaciente.setText(String.valueOf(c.getConsIdPaciente()));
 		tfIDMedico.setText(String.valueOf(c.getConsIdMedico()));
 	}
 
@@ -87,7 +83,7 @@ public class ConsultaController implements ConsultaControllerImpl {
 		
 		StringBuffer sb = new StringBuffer("ConsID\t\t\t\tConsNome\t\t\t\tConsIdPaciente\n");
 		for (Consulta c : listaConsultas) {
-			sb.append(c.getConsId() +"\t\t\t\t\t"+c.getConsNome()+"\t\t\t\t\t"+c.getConsIdPaciente());
+			sb.append(c.getConsId() +"\t\t\t\t\t"+c.getConsNome()+"\t\t\t\t\t"+c.getConsIdMedico());
 			
 		}
 	}
@@ -96,7 +92,6 @@ public class ConsultaController implements ConsultaControllerImpl {
 		tfCodigoConsulta.setText("");
 		tfNomeConsulta.setText("");
 		tfDataConsulta.setText("");
-		tfIDPaciente.setText("");
 		tfIDExame.setText("");
 		tfIDMedico.setText("");
 	}

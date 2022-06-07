@@ -10,7 +10,6 @@ public class Consulta {
 	private LocalDate consData;
 	private int ConsIdMedico;
 	private int ConsIdExame;
-	private int ConsIdPaciente;
 	private DateTimeFormatter formatter =
 	        DateTimeFormatter.ofPattern("d/MM/yyyy");
 	
@@ -44,12 +43,6 @@ public class Consulta {
 	public void setConsIdExame(int consIdExame) {
 		ConsIdExame = consIdExame;
 	}
-	public int getConsIdPaciente() {
-		return ConsIdPaciente;
-	}
-	public void setConsIdPaciente(int consIdpaciente) {
-		ConsIdPaciente = consIdpaciente;
-	}
 	public String conversorData() {
 		String dataCons = getConsData().format(formatter);
 		return dataCons;
@@ -57,7 +50,7 @@ public class Consulta {
 	@Override
 	public String toString() {
 		return "Consulta [ConsId=" + ConsId + ", ConsNome=" + ConsNome + ", consData=" + consData + ", ConsIdMedico="
-				+ ConsIdMedico + ", ConsIdExame=" + ConsIdExame + ", ConsIdpaciente=" + ConsIdPaciente + ", formatter="
+				+ ConsIdMedico + ", ConsIdExame=" + ConsIdExame + ", ConsIdpaciente=" + ", formatter="
 				+ formatter + "]";
 	}
 	

@@ -29,8 +29,6 @@ public class PrincipalController {
 	@FXML
 	private TextField tfDataConsulta;
 	@FXML
-	private TextField tfIDPaciente;
-	@FXML
 	private TextField tfIDExame;
 	@FXML
 	private TextField tfIDMedico;
@@ -56,13 +54,12 @@ public class PrincipalController {
 	public void acaoConsulta(ActionEvent event) {
 		String cmd = event.getSource().toString();
 		ConsultaController control = new ConsultaController(tfCodigoConsulta, tfNomeConsulta, tfDataConsulta,
-				tfIDPaciente, tfIDExame, tfIDMedico, taListaConsultas);	
+				           tfIDExame, tfIDMedico, taListaConsultas);	
 		
 		if ((cmd.contains("Inserir")|| cmd.contains("Atualizar"))
 		&& (tfCodigoConsulta.getText().isEmpty())
 		|| tfNomeConsulta.getText().isEmpty()
 		|| tfDataConsulta.getText().isEmpty()
-		|| tfIDPaciente.getText().isEmpty()
 		|| tfIDExame.getText().isEmpty()
 		|| tfIDMedico.getText().isEmpty()) {
 			JOptionPane.showMessageDialog(null, "Preencha os campos", "ERRO", JOptionPane.ERROR_MESSAGE);
@@ -78,7 +75,6 @@ public class PrincipalController {
 						Consulta c = new Consulta();
 						c.setConsID(Integer.parseInt(tfCodigoConsulta.getText()));
 						c.setConsNome(tfNomeConsulta.getText());
-						c.setConsIdPaciente(Integer.parseInt(tfIDPaciente.getText()));
 						c.setConsIdExame(Integer.parseInt(tfIDExame.getText()));
 						c.setConsIdMedico(Integer.parseInt(tfIDMedico.getText()));
 						if (cmd.contains("Inserir")) {

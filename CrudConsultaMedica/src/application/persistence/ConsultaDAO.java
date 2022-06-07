@@ -28,7 +28,6 @@ public class ConsultaDAO implements ConsultaDAOImpl {
 		ps.setString(3, c.conversorData());
 		ps.setInt(4, c.getConsIdMedico());
 		ps.setInt(5, c.getConsIdExame());
-		ps.setInt(6, c.getConsIdPaciente());
 		
 		ps.execute();
 		ps.close();
@@ -46,7 +45,6 @@ public class ConsultaDAO implements ConsultaDAOImpl {
 		ps.setString(3, c.conversorData());
 		ps.setInt(4, c.getConsIdMedico());
 		ps.setInt(5, c.getConsIdExame());
-		ps.setInt(6, c.getConsIdPaciente());
 		
 		ps.execute();
 		ps.close();
@@ -62,8 +60,6 @@ public class ConsultaDAO implements ConsultaDAOImpl {
 		ps.setString(3, c.conversorData());
 		ps.setInt(4, c.getConsIdMedico());
 		ps.setInt(5, c.getConsIdExame());
-		ps.setInt(6, c.getConsIdPaciente());
-		
 		ps.execute();
 		ps.close();
 		
